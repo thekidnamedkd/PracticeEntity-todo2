@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ToDoList.Models.Item
+
+<h4>Add a new task</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description, "Test")
+    @Html.TextBoxFor(model => model.Description)
+    <input type="submit" value="Add New Task"/>
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>
