@@ -42,9 +42,9 @@ namespace ToDoList.Controllers
       Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
       return View(thisItem);
     }
-    public ActionResult Edit (int id);  // Get method that routes to page with form to update item
+    public ActionResult Edit (int id)  // Get method that routes to page with form to update item
     {
-      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id)
+      var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
       return View(thisItem); // finds spectific item and passes it to the view
     }
@@ -58,7 +58,7 @@ namespace ToDoList.Controllers
 
     public ActionResult Delete (int id) // initializes delete process by grabbing the item?
     {
-      var thisItem = _db.Items.FirstOrDefault(item => items.ItemId == id);
+      var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
       return View (thisItem);
     }
 
